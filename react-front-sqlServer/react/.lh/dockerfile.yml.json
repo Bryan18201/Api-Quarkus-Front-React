@@ -1,0 +1,18 @@
+{
+    "sourceFile": "dockerfile.yml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1735402381280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1735402381280,
+            "name": "Commit-0",
+            "content": "FROM node:18 as build\r\nWORKDIR /app\r\nCOPY . .\r\nRUN npm install && npm run build\r\n\r\nFROM nginx:alpine\r\nCOPY --from=build /app/dist /usr/share/nginx/html\r\nEXPOSE 80\r\n"
+        }
+    ]
+}

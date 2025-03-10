@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/api.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1735404118277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1735404118277,
+            "name": "Commit-0",
+            "content": "const API_URL = \"http://localhost:8080/productos\";\r\n\r\nexport const obtenerProductos = async () => {\r\n    const response = await fetch(API_URL);\r\n    return response.json();\r\n};\r\n\r\nexport const crearProducto = async (producto) => {\r\n    const response = await fetch(API_URL, {\r\n        method: \"POST\",\r\n        headers: {\r\n            \"Content-Type\": \"application/json\",\r\n        },\r\n        body: JSON.stringify(producto),\r\n    });\r\n    return response.json();\r\n};\r\n\r\nexport const actualizarProducto = async (id, producto) => {\r\n    const response = await fetch(`${API_URL}/${id}`, {\r\n        method: \"PUT\",\r\n        headers: {\r\n            \"Content-Type\": \"application/json\",\r\n        },\r\n        body: JSON.stringify(producto),\r\n    });\r\n    return response.json();\r\n};\r\n\r\nexport const eliminarProducto = async (id) => {\r\n    await fetch(`${API_URL}/${id}`, {\r\n        method: \"DELETE\",\r\n    });\r\n};\r\n"
+        }
+    ]
+}
